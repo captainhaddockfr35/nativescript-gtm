@@ -1,39 +1,55 @@
-# Your Plugin Name
+# Nativescript Google Tag Manager
 
-Add your plugin badges here. See [nativescript-urlhandler](https://github.com/hypery2k/nativescript-urlhandler) for example.
+[![npm version](https://badge.fury.io/js/nativescript-gtm.svg)](http://badge.fury.io/js/nativescript-gtm)
 
-Then describe what's the purpose of your plugin. 
+[![NPM](https://nodei.co/npm/nativescript-gtm.png?downloads=true&downloadRank=true&stars=true)](https://nodei.co/npm/nativescript-gtm/)
 
-In case you develop UI plugin, this is where you can add some screenshots.
+
+Use Firebase + GTM into your Nativescript application
 
 ## (Optional) Prerequisites / Requirements
 
-Describe the prerequisites that the user need to have installed before using your plugin. See [nativescript-firebase plugin](https://github.com/eddyverbruggen/nativescript-plugin-firebase) for example.
+* Install the [nativescript-firebase plugin](https://github.com/eddyverbruggen/nativescript-plugin-firebase)
+* Create a Google Tag Manager account
 
 ## Installation
 
-Describe your plugin installation steps. Ideally it would be something like:
 
 ```javascript
-tns plugin add <your-plugin-name>
+tns plugin add nativescript-gtm
 ```
 
 ## Usage 
 
-Describe any usage specifics for your plugin. Give examples for Android, iOS, Angular if needed. See [nativescript-drop-down](https://www.npmjs.com/package/nativescript-drop-down) for example.
-	
-	```javascript
-    Usage code snippets here
-    ```)
+### iOS
+Create an iOS container if your Google Tag Manager account doesn't have one:
+* Sign in to your Google Tag Manager account.
+* Click *ADMIN* in the top navigation bar.
+* On the *CONTAINER* column, click the drop-down menu and select *CREATE CONTAINER*.
+* Enter a container name.
+* Select iOS container.
+* Select Firebase (iOS) SDK.
+* Click CREATE.
 
-## API
+Download your container:
+* Sign in to your Google Tag Manager account.
+* Select your iOS container.
+* Click Versions in the top navigation bar.
+* Click **Actions** > **Download** on the selected container version.
+* The name of the downloaded file is the container ID with a .json extension.
 
-Describe your plugin methods and properties here. See [nativescript-feedback](https://github.com/EddyVerbruggen/nativescript-feedback) for example.
-    
-| Property | Default | Description |
-| --- | --- | --- |
-| some property | property default value | property description, default values, etc.. |
-| another property | property default value | property description, default values, etc.. |
+Add the downloaded container to your project:
+* Create the folder `App_Resources/iOS/container`
+* Copy the downloaded file into this new folder (usually `PROJECT_ROOT/App_Resources/container/GTM-XXXXXX.json`).
+
+
+### Android
+* Sign in to your Google Tag Manager account.
+* Select a mobile container.
+* Click Versions in the top navigation bar.
+* Click **Actions** > **Download** on the selected container version.
+* Create the `App_Resources/Android/src/main/assets/containers` folder if it doesn't exist. Copy the downloaded container to the folder.
+
     
 ## License
 
